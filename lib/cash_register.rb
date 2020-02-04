@@ -7,7 +7,7 @@ class CashRegister
     @total = 0
     @discount = discount 
     @items = []
-    @list = []
+    @list = {}
   end 
   
   def add_item(title, price, quantity = 1)
@@ -16,7 +16,7 @@ class CashRegister
       @items << title
       i += 1
     end 
-    @list << [title, price, quantity]
+    @list[title] = [price, quantity]
     @total += price * quantity
   end 
   
@@ -39,7 +39,7 @@ class CashRegister
   
   def void_last_transaction
     if @items.length > 1 
-      @total -= @list[@list.index(@items[@items.length - 1])][1]
+      @total -= @list[@items.length - 1][0]
       @items.pop()
     elsif @items.length == 1
       @items.pop()
