@@ -41,7 +41,7 @@ class CashRegister
     if @list.length > 1 
       @total -= @list[@items[@items.length - 1]][0] * @list[@items[@items.length - 1]][1]
       @items.pop()
-      
+      @lists
     else 
       @items.pop()
       @total = 0.0
