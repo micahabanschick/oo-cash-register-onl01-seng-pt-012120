@@ -43,7 +43,7 @@ class CashRegister
       @list.delete_if{|key| key == @items[@items.length - 1]}
       @items.pop()
     else 
-      @lists.delete(@list[@items[@items.length - 1]])
+      @list.delete(@list[@items[@items.length - 1]])
       @items.pop()
       @total = 0.0
     end 
