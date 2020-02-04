@@ -39,7 +39,7 @@ class CashRegister
   
   def void_last_transaction
     if @items.length > 1 
-      @total -= @list[@list.length - 1][1]
+      @total -= @list[@list.index(@items[@items.length - 1])][1]
       @items.pop()
     elsif @items.length == 1
       @items.pop()
